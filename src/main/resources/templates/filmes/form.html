@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" th:attr="data-tema=${tema}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="base-url" th:content="@{/}">
+    <title>Filme - Casa Cultural</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body data-pagina="form" th:attr="data-filme-id=${filmeId}">
+<header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+<main>
+    <div id="mensagem"></div>
+
+    <div class="card">
+        <h2 id="titulo-pagina">Cadastrar filme</h2>
+        <form id="form-filme" novalidate>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" maxlength="150">
+            <div class="erro" data-campo="titulo"></div>
+
+            <label for="sinopse">Sinopse</label>
+            <textarea id="sinopse" maxlength="1000"></textarea>
+            <div class="erro" data-campo="sinopse"></div>
+
+            <label for="genero">Gênero</label>
+            <select id="genero">
+                <option value="">Selecione...</option>
+                <option th:each="g : ${generos}" th:value="${g}" th:text="${g}"></option>
+            </select>
+            <div class="erro" data-campo="genero"></div>
+
+            <label for="anoLancamento">Ano de lançamento</label>
+            <input type="number" id="anoLancamento">
+            <div class="erro" data-campo="anoLancamento"></div>
+
+            <button type="submit" id="btn-salvar">Salvar</button>
+            <a class="btn btn-sec" th:href="@{/filmes}">Cancelar</a>
+        </form>
+    </div>
+</main>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/cinema.js}"></script>
+</body>
+</html>

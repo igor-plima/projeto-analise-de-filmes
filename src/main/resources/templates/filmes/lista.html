@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" th:attr="data-tema=${tema}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="base-url" th:content="@{/}">
+    <title>Filmes - Casa Cultural</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body data-pagina="lista">
+<header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+<main>
+    <div id="mensagem"></div>
+
+    <div class="card">
+        <h2>Filmes cadastrados</h2>
+        <p class="vazio" id="carregando">Carregando...</p>
+        <p class="vazio" id="sem-filmes" style="display:none">Nenhum filme cadastrado ainda.</p>
+        <table id="tabela-filmes" style="display:none">
+            <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Ano</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <a class="btn" th:href="@{/filmes/novo}">Cadastrar novo filme</a>
+    </div>
+</main>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/cinema.js}"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org" th:attr="data-tema=${tema}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="base-url" th:content="@{/}">
+    <title>Detalhes do filme - Casa Cultural</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body data-pagina="detalhes" th:attr="data-filme-id=${filmeId}">
+<header th:replace="~{fragments/cabecalho :: cabecalho}"></header>
+<main>
+    <div id="mensagem"></div>
+
+    <div id="conteudo">
+        <div class="card">
+            <h2 id="filme-titulo">Carregando...</h2>
+            <p><strong>Gênero:</strong> <span id="filme-genero"></span></p>
+            <p><strong>Ano de lançamento:</strong> <span id="filme-ano"></span></p>
+            <p><strong>Sinopse:</strong> <span id="filme-sinopse"></span></p>
+            <p><strong>Média das notas:</strong> <span id="filme-media">-</span></p>
+            <a class="btn" th:href="@{/filmes/{id}/editar(id=${filmeId})}">Editar filme</a>
+            <button type="button" class="btn btn-perigo" id="btn-excluir-filme">Excluir filme</button>
+            <a class="btn btn-sec" th:href="@{/filmes}">Voltar</a>
+        </div>
+
+        <div class="card">
+            <h3>Análises</h3>
+            <p class="vazio" id="sem-analises" style="display:none">Este filme ainda não possui análises.</p>
+            <div id="lista-analises"></div>
+        </div>
+
+        <div class="card">
+            <h3 id="titulo-form-analise">Adicionar análise</h3>
+            <form id="form-analise" novalidate>
+                <label for="analise">Análise</label>
+                <textarea id="analise" maxlength="1000"></textarea>
+                <div class="erro" data-campo="analise"></div>
+
+                <label for="nota">Nota (0 a 10)</label>
+                <input type="number" id="nota" min="0" max="10">
+                <div class="erro" data-campo="nota"></div>
+
+                <button type="submit" id="btn-salvar-analise">Enviar análise</button>
+                <button type="button" class="btn btn-sec" id="btn-cancelar-edicao" style="display:none">Cancelar edição</button>
+            </form>
+        </div>
+    </div>
+</main>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/cinema.js}"></script>
+</body>
+</html>

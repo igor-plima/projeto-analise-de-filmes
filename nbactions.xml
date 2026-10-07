@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  O projeto e empacotado como WAR, mas o botao "Executar" do NetBeans continua iniciando a aplicacao
+  com o Tomcat embutido (mesmo comando usado em projetos JAR). Para gerar o WAR use "Limpar e Construir".
+-->
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <packagings>
+            <packaging>war</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:3.0.0:exec</goal>
+        </goals>
+        <properties>
+            <exec.vmArgs></exec.vmArgs>
+            <exec.args>${exec.vmArgs} -classpath %classpath br.com.senac.cinema.CinemaApplication ${exec.appArgs}</exec.args>
+            <exec.appArgs></exec.appArgs>
+            <exec.executable>java</exec.executable>
+        </properties>
+    </action>
+</actions>

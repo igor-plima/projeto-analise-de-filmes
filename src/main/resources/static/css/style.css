@@ -1,0 +1,73 @@
+/* ===== Tema claro (padrão) ===== */
+:root {
+    --bg: #f4f4f6;
+    --texto: #222;
+    --card: #fff;
+    --sombra: rgba(0, 0, 0, .12);
+    --cabecalho: #2b2d42;
+    --cabecalho-texto: #fff;
+    --borda: #ddd;
+    --botao: #2b2d42;
+    --botao-texto: #fff;
+    --botao-sec: #6c757d;
+    --botao-perigo: #b00020;
+    --erro: #b00020;
+    --erro-bg: #fdecea;
+    --ok-bg: #e3f4e5;
+    --ok-borda: #2e7d32;
+    --discreto: #666;
+    --campo-bg: #fff;
+    --campo-borda: #b9b9c3;
+}
+
+/* ===== Tema escuro (ativado por <html data-tema="escuro">) ===== */
+html[data-tema="escuro"] {
+    color-scheme: dark;
+    --bg: #14151c;
+    --texto: #e6e6ea;
+    --card: #1f212b;
+    --sombra: rgba(0, 0, 0, .5);
+    --cabecalho: #0d0e13;
+    --cabecalho-texto: #f0f0f4;
+    --borda: #33364a;
+    --botao: #4b5fd6;
+    --botao-texto: #fff;
+    --botao-sec: #565a6e;
+    --botao-perigo: #c62839;
+    --erro: #ff8a80;
+    --erro-bg: #3b1a1d;
+    --ok-bg: #1b3a20;
+    --ok-borda: #66bb6a;
+    --discreto: #a3a8bd;
+    --campo-bg: #14151c;
+    --campo-borda: #4a4e66;
+}
+
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: var(--bg); color: var(--texto); }
+a { color: inherit; }
+header { background: var(--cabecalho); color: var(--cabecalho-texto); padding: 16px 32px; position: relative; }
+header a { color: var(--cabecalho-texto); text-decoration: none; margin-right: 20px; }
+header h1 { margin: 0 0 8px 0; font-size: 22px; }
+.btn-tema { position: absolute; right: 32px; top: 16px; margin: 0; padding: 8px 14px; font-size: 14px;
+    background: transparent; color: var(--cabecalho-texto); border: 1px solid var(--cabecalho-texto);
+    border-radius: 4px; cursor: pointer; }
+main { max-width: 860px; margin: 24px auto; padding: 0 16px; }
+.card { background: var(--card); border-radius: 6px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px var(--sombra); }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--borda); }
+label { display: block; margin-top: 12px; font-weight: bold; }
+input, select, textarea { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; font-size: 15px;
+    background: var(--campo-bg); color: var(--texto); border: 1px solid var(--campo-borda); border-radius: 4px; }
+textarea { min-height: 90px; }
+button, .btn { display: inline-block; background: var(--botao); color: var(--botao-texto); border: 0; padding: 10px 18px;
+    margin-top: 16px; border-radius: 4px; text-decoration: none; cursor: pointer; font-size: 15px; }
+.btn-perigo { background: var(--botao-perigo); }
+.btn-sec { background: var(--botao-sec); }
+.btn-sm { padding: 6px 12px; font-size: 13px; margin: 0 6px 0 0; }
+.acoes { margin-top: 8px; }
+.erro { color: var(--erro); font-size: 13px; margin-top: 4px; }
+.msg-ok { background: var(--ok-bg); border-left: 4px solid var(--ok-borda); padding: 10px; margin-bottom: 16px; }
+.msg-erro { background: var(--erro-bg); border-left: 4px solid var(--erro); padding: 10px; margin-bottom: 16px; }
+.analise { border-top: 1px solid var(--borda); padding: 12px 0; }
+.nota { font-weight: bold; }
+.vazio { color: var(--discreto); font-style: italic; }

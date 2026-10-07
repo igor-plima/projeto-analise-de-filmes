@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="cabecalho">
+    <h1>Casa Cultural - Cinema</h1>
+    <a th:href="@{/filmes}">Filmes</a>
+    <a th:href="@{/filmes/novo}">Cadastrar filme</a>
+    <button type="button" id="btn-tema" class="btn-tema"
+            th:text="${tema == 'escuro'} ? 'Tema claro' : 'Tema escuro'">Tema escuro</button>
+</header>
+</body>
+</html>

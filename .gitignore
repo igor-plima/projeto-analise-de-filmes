@@ -1,0 +1,31 @@
+# Maven / build
+target/
+*.war
+*.war.original
+*.jar
+*.class
+
+# NetBeans
+nbproject/private/
+build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# IntelliJ / VS Code / Eclipse
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs e configurações locais
+*.log
+application-local.properties
+.env
