@@ -85,6 +85,6 @@ Importe `postman/Cinema-API.postman_collection.json` no Postman para testar toda
 - Gerar o WAR (`mvn clean package` → `target/cinema-avaliacoes.war`) e publicar no Tomcat 10.1: [`docs/guia-deploy.md`](docs/guia-deploy.md)
 
 ## Observações
-- Projeto criado como parte do curso Técnico em Desenvolvimento de Sistemas (SENAC São Paulo).
+- Esse é um projeto meu criado como parte do curso Técnico em Desenvolvimento de Sistemas (SENAC).
 - O jQuery 3.7.1 (licença MIT) acompanha o projeto em `src/main/resources/static/js/`.
 - O arquivo `nbactions.xml` configura o botão "Executar" do NetBeans para este projeto WAR; pode ser ignorado em outras IDEs.
